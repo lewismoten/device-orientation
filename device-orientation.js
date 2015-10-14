@@ -1,8 +1,6 @@
-(function webGraphicsLibraryDemo(){
+(function deviceOrientationDemo(){
 
 	'use strict';
-
-	window.onload = main;
 
 	var data = {
 
@@ -15,6 +13,8 @@
 		}
 
 	};
+
+	window.onload = main;
 
 	return;
 
