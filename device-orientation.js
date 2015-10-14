@@ -66,7 +66,7 @@
 	function setValue(id, value) {
 		var element = document.getElementById(id);
 		if(element === null) {
-			console.log('not found', id);
+			// console.log('not found', id);
 			return;
 		};
 		element.innerText = value;
