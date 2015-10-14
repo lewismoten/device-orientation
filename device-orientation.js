@@ -82,8 +82,6 @@
 
 	function onDeviceOrientation(event) {
 
-		console.log('onDeviceOrientation', event);
-
 		var orientation = data.orientation,
 			alpha = event.alpha;
 
@@ -92,13 +90,13 @@
 		orientation.gamma 		= event.gamma;
 		orientation.absolute 	= event.absolute;
 
-		setCompass(orientation);
+		data.compass = getCompass(event);
 
 		displayData();
 
 	}
 
-	function setCompass(orientation) {
+	function getCompass(orientation) {
 
 		var alpha = orientation.alpha,
 			directions =  [
@@ -111,23 +109,27 @@
 			'West',
 			'North West'
 			],
-			direction;
+			directionIndex,
+			facing,
+			degrees;
 
 		if(alpha === null || isNaN(alpha)) {
 			return;
 		}
 
 
-		orientation.degrees = Math.round(apha);
-		direction = Math.floor(alpha / 45);
+		degrees = Math.round(apha);
+		directionIndex = Math.floor(alpha / 45);
 		
-		orientation.direction = directions[direction];
+		facing = directions[directionIndex];
 		
+		return {
+			facing: facing,
+			degrees: degrees
+		}
 	}
 
 	function onDeviceMotion(event) {
-
-		console.log("onDeviceMotion", event);
 
 		var motion = data.motion;
 
