@@ -114,14 +114,11 @@
 			degrees;
 
 		if(alpha === null || isNaN(alpha)) {
-			return {
-				facing: 'not a number',
-				degrees: alpha
-			};
+			return;
 		}
 
 
-		degrees = Math.round(apha);
+		degrees = Math.round(alpha);
 		directionIndex = Math.floor(alpha / 45);
 		
 		facing = directions[directionIndex];
