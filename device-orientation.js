@@ -115,7 +115,7 @@
 		}
 
 		var headingSize = 360 / directions.length,
-			degrees = Math.abs(-Math.floor(alpha)),
+			degrees = Math.floor(alpha),
 			offset = headingSize / 2,
 			offsetDegrees = degrees + offset,
 			cappedDegrees = (360 + offsetDegrees) % 360,
