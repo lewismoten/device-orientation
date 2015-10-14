@@ -98,7 +98,7 @@
 
 	function getCompass(orientation) {
 
-		var alpha = orientation.alpha,
+		var alpha = 360 - orientation.alpha, // backwards?
 			directions =  [
 			'North', 
 			'North East',
