@@ -37,7 +37,7 @@
 
 		displayData();
 
-		window.setInterval(displayData, 1000);
+		window.setInterval(displayData, 400);
 	}
 
 	function displayData() {
