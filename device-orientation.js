@@ -84,15 +84,45 @@
 
 		console.log('onDeviceOrientation', event);
 
-		var orientation = data.orientation;
+		var orientation = data.orientation,
+			alpha = event.alpha;
 
 		orientation.alpha 		= event.alpha;
 		orientation.beta		= event.beta;
 		orientation.gamma 		= event.gamma;
 		orientation.absolute 	= event.absolute;
 
+		setCompass(orientation);
+
 		displayData();
 
+	}
+
+	function setCompass(orientation) {
+
+		var alpha = orientation.alpha,
+			directions =  [
+			'North', 
+			'North East', 
+			'East', 
+			'South East',
+			'South', 
+			'South West',
+			'West',
+			'North West'
+			],
+			direction;
+
+		if(alpha === null || isNaN(alpha)) {
+			return;
+		}
+
+
+		orientation.degrees = Math.round(apha);
+		direction = Math.floor(alpha / 45);
+		
+		orientation.direction = directions[direction];
+		
 	}
 
 	function onDeviceMotion(event) {
