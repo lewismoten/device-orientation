@@ -34,6 +34,10 @@
 			window.addEventListener('devicemotion', onDeviceMotion, false);
 
 		}
+
+		displayData();
+
+		window.setInterval(displayData, 1000);
 	}
 
 	function displayData() {
@@ -91,8 +95,6 @@
 		orientation.absolute 	= event.absolute;
 
 		data.compass = getCompass(event);
-
-		displayData();
 
 	}
 
@@ -155,8 +157,6 @@
 		motion.interval 					= event.interval;
 		motion.accelerationIncludingGravity = event.accelerationIncludingGravity;
 		motion.rotationRate 				= event.rotationRate;
-
-		displayData();
 
 	}
 
