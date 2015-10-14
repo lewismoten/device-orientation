@@ -114,7 +114,10 @@
 			degrees;
 
 		if(alpha === null || isNaN(alpha)) {
-			return;
+			return {
+				facing: 'not a number',
+				degrees: alpha
+			};
 		}
 
 
