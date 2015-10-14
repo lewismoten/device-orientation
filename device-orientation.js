@@ -89,7 +89,6 @@
 		orientation.beta		= event.beta;
 		orientation.gamma 		= event.gamma;
 		orientation.absolute 	= event.absolute;
-		orientation.webkitCompassOrientation = event.webkitCompassOrientation
 
 		data.compass = getCompass(event);
 
@@ -99,7 +98,7 @@
 
 	function getCompass(orientation) {
 
-		var alpha = orientation.webkitCompassOrientation || orientation.alpha,
+		var alpha = orientation.alpha,
 			directions =  [
 			'North', 
 			'North East', 
@@ -115,6 +114,8 @@
 			return;
 		}
 
+		directions.reverse(); // is this for iOS only?
+		
 		var headingSize = 360 / directions.length,
 			degrees = Math.floor(alpha),
 			offset = headingSize / 2,
