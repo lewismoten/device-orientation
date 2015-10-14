@@ -101,23 +101,21 @@
 		var alpha = orientation.alpha,
 			directions =  [
 			'North', 
-			'North East', 
-			'East', 
+			'North East',
+			'East',
 			'South East',
-			'South', 
+			'South',
 			'South West',
 			'West',
-			'North West'
+			'North West'			
 			];
 
 		if(alpha === null || isNaN(alpha)) {
 			return;
 		}
 
-		directions.reverse(); // is this for iOS only?
-		
 		var headingSize = 360 / directions.length,
-			degrees = Math.floor(alpha),
+			degrees = Math.abs(-Math.floor(alpha)),
 			offset = headingSize / 2,
 			offsetDegrees = degrees + offset,
 			cappedDegrees = (360 + offsetDegrees) % 360,
