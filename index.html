@@ -1,0 +1,48 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Device Orientation</title>
+        <meta name="description" content="Detect orientation of device">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript" src="device-orientation.js"></script>
+    </head>
+    <body>
+    	<h1>Device Orientation</h1>
+
+    	<h2>Orientation</h2>
+    	Supported: <span id="data.orientation.supported">Detecting...</span>
+
+    	<table border=1>
+    		<tr><td>Alpha</td><td id="data.orientation.alpha"></td></tr>
+    		<tr><td>Beta</td> <td id="data.orientation.beta"> </td></tr>
+    		<tr><td>Gamma</td><td id="data.orientation.gamma"></td></tr>
+    		<tr><td>Absolute</td><td id="data.orientation.absolute"></td></tr>
+    	</table>
+
+    	<h2>Motion</h2>
+    	Supported: <span id="data.motion.supported">Detecting...</span>
+
+    	<p>
+    		Interval: <span id="data.motion.interval"></span>
+    	</p>
+
+    	<h3>Acceleration</h3>
+    	<table border=1>
+    		<tr><td>Gravity</td><td>Without</td><td>Included</td></tr>
+    		<tr><td>X</td><td id="data.motion.acceleration.x"></td><td id="data.motion.accelerationIncludingGravity.x"></td></tr>
+    		<tr><td>Y</td> <td id="data.motion.acceleration.y"> </td><td id="data.motion.accelerationIncludingGravity.y"> </td></tr>
+    		<tr><td>Z</td><td id="data.motion.acceleration.z"></td><td id="data.motion.accelerationIncludingGravity.z"></td></tr>
+    	</table>
+
+    	<h3>Rotation Rate</h3>
+    	<table border=1>
+    		<tr><td>Alpha</td><td id="data.motion.rotationRate.alpha"></td></tr>
+    		<tr><td>Beta</td> <td id="data.motion.rotationRate.beta"> </td></tr>
+    		<tr><td>Gamma</td><td id="data.motion.rotationRate.gamma"></td></tr>
+    	</table>
+
+
+	</body>
+</html>
