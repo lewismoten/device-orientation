@@ -108,20 +108,38 @@
 			'South West',
 			'West',
 			'North West'
-			],
-			directionIndex,
-			facing,
-			degrees;
+			];
 
 		if(alpha === null || isNaN(alpha)) {
 			return;
 		}
 
+		var headingSize = 360 / directions.length,
+			degrees = Math.floor(alpha),
+			offset = headingSize / 2,
+			offsetDegrees = degrees + offset,
+			cappedDegrees = (360 + offsetDegrees) % 360,
+			directionIndex = Math.floor(cappedDegrees / headingSize),
+			facing = directions[directionIndex];
 
-		degrees = Math.round(alpha);
-		directionIndex = Math.floor(alpha / 45);
-		
-		facing = directions[directionIndex];
+		// console.log({
+		// 	headingSize: headingSize,
+		// 	degrees: degrees,
+		// 	offset: offset,
+		// 	offsetDegrees: offsetDegrees,
+		// 	cappedDegrees: cappedDegrees,
+		// 	directionIndex: directionIndex,
+		// 	facing: facing
+
+		// });
+		// n: 0    -22.5 - 22.5
+		// ne: 45   22.5 - 67.5
+		// e: 90    67.5 - 112.5
+		// se:     112.5 - 157.5
+		// s: 180  157.5 - 202.5
+		// sw:     202.5 - 247.5
+		// w: 270  247.5 - 292.5
+		// nw:     292.5 - 337.5
 		
 		return {
 			facing: facing,
