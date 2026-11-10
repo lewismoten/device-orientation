@@ -1,3 +1,5 @@
+![device-orientation: phone tilting with compass heading and axis arrows](docs/images/social-preview.png)
+
 # Device Orientation
 
 Work with device orientation/motion in web browsers. Raw data is displayed, as well as the current heading/direction that a device is facing.
